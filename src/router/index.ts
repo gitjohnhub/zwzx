@@ -11,7 +11,24 @@ const router = createRouter({
     {
       path: '/Content',
       name: 'Content',
-      component: () => import('@/components/ContentView.vue')
+      component: () => import('@/components/ContentView.vue'),
+      children:[
+        {
+          path:"/",
+          name:"Dianzizhizhao",
+          component:() => import('@/components/ChildView/DianzizhizhaoView.vue'),
+        },
+        {
+          path:"Dianzizhizhao",
+          name:"Dianzizhizhao",
+          component:() => import('@/components/ChildView/DianzizhizhaoView.vue'),
+        },
+        {
+          path:"Shipinxinban",
+          name:"Shipinxinban",
+          component:() => import('@/components/ChildView/ShipinxinbanView.vue'),
+        }
+      ]
     },
     {
       path: '/Shuiwu',
@@ -22,6 +39,11 @@ const router = createRouter({
       path: '/Weijianwei',
       name: 'Weijianwei',
       component: () => import('@/components/WeijianweiView.vue')
+    },
+    {
+      path: '/Minzhen',
+      name: 'Minzhen',
+      component: () => import('@/components/MinzhenView.vue')
     },
 
   ]

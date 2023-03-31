@@ -43,6 +43,13 @@ const size = ref<SizeType>('large')
       <a :href='data.banli_url.id+item.id' target="_blank"><a-button type="primary" shape="round" :size="size">{{item.name}}</a-button></a>
     </a-col>
   </a-row>
+  <a-divider />
+  <a-row><h3>特种设备安全管理人员和作业人员资格认定</h3></a-row>
+  <a-row>
+    <a-col v-for='item in data.tezhongshebei'>
+      <a :href='data.banli_url.id+item.id' target="_blank"><a-button type="primary" shape="round" :size="size">{{item.name}}</a-button></a>
+    </a-col>
+  </a-row>
 
 
   <a-divider />

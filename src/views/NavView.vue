@@ -24,9 +24,13 @@
         <!-- <a-menu-item key="3">Option 3</a-menu-item> -->
         <RouterLink to='/Shuiwu'><a-menu-item key="4">直达链接</a-menu-item></RouterLink>
       </a-menu-item-group>
-      <a-menu-item-group key="g2" title="卫生健康委员会">
-        <!-- <a-menu-item key="3">Option 3</a-menu-item> -->
+      <a-menu-item-group key="g3" title="卫生健康委员会">
+        <!-- <a-menu-item key="4">Option 3</a-menu-item> -->
         <RouterLink to='/Weijianwei'><a-menu-item key="4">直达链接</a-menu-item></RouterLink>
+      </a-menu-item-group>
+      <a-menu-item-group key="g4" title="民政">
+        <!-- <a-menu-item key="3">Option 3</a-menu-item> -->
+        <RouterLink to='/Minzhen'><a-menu-item key="4">直达链接</a-menu-item></RouterLink>
       </a-menu-item-group>
     </a-sub-menu>
     <a-sub-menu key="sub2" @titleClick="titleClick">

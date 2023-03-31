@@ -6,13 +6,18 @@ export const useDataStore = defineStore('mydata', () => {
     "banli_url":{
       "id":'https://zwdt.sh.gov.cn/govPortals/bsfw/item/'
     },
+    "minzhen":[
+      {
+      "id":"http://credit.fgw.sh.gov.cn/",
+      "name":"信用中国（上海）"
+    }],
     "shuiwu":[
       {
-      "id":"https://etax.shanghai.chinatax.gov.cn/sxsq-web/wszx-front/apps/views/xbnsrzhtcsq_wrt_cxb/xbnsrDl.html?id=11000202&code=11000202",
+      "id":"https://etax.shanghai.chinatax.gov.cn/sxsq-web/wszx-front/apps/views/xbnsrzhtcsq_wrt_cxb/xbnsrDl.html",
       "name":"新办纳税人套餐办理"
     },
     {
-      "id":"https://etax.shanghai.chinatax.gov.cn/wszx-web/bszm/apps/views/beforeLogin/indexBefore/pageIndex.html#/",
+      "id":"https://etax.shanghai.chinatax.gov.cn",
       "name":"国家税务总局上海市税务局官网"
     },
   ],
@@ -86,6 +91,16 @@ export const useDataStore = defineStore('mydata', () => {
       {
       "id": "a5fbf885-139b-b086-db59-6ab49a88cf82",
       "name": "注销 "
+      }
+    ],
+    "tezhongshebei": [
+      {
+      "id": "27489289-28ed-4a76-ab27-8e0053f4934e",
+      "name": "新办 "
+      },
+      {
+      "id": "28a3dbc1-5505-476f-9a06-be8d4e5d8143",
+      "name": "复审  "
       }
     ],
     "gonggongweisheng": [
