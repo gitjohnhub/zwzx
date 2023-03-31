@@ -6,10 +6,16 @@ export const useDataStore = defineStore('mydata', () => {
     "banli_url":{
       "id":'https://zwdt.sh.gov.cn/govPortals/bsfw/item/'
     },
-    "shuiwu":{
+    "shuiwu":[
+      {
       "id":"https://etax.shanghai.chinatax.gov.cn/sxsq-web/wszx-front/apps/views/xbnsrzhtcsq_wrt_cxb/xbnsrDl.html?id=11000202&code=11000202",
       "name":"新办纳税人套餐办理"
     },
+    {
+      "id":"https://etax.shanghai.chinatax.gov.cn/wszx-web/bszm/apps/views/beforeLogin/indexBefore/pageIndex.html#/",
+      "name":"国家税务总局上海市税务局官网"
+    },
+  ],
     "yubaozhuangchaxun":{
       "id":'https://xk.scjgj.sh.gov.cn/xzxk_wbjg/#/licenceListscjgj?type=00111',
       "name":'仅销售预包装食品备案查询'

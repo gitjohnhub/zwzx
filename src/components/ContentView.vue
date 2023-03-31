@@ -1,18 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import type { SizeType } from 'ant-design-vue/es/config-provider';
-const size = ref<SizeType>('large')
-const shipinxinban = "https://zwdt.sh.gov.cn/govPortals/bsfw/item/51dd6e47-4c9a-42dd-96aa-c5701887ef5f"
 </script>
 
 <template>
-   <a-divider />
-  <a :href='shipinxinban' target="_blank"><a-button type="primary" shape="round" :size="size">
-    <template #icon>
-      <DownloadOutlined />
-    </template>
-    testView
-  </a-button></a>
+  <h1>developing</h1>
 </template>
 
 <style scoped>
