@@ -1,12 +1,21 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import NavView from './views/NavView.vue'
+import yiwangtongban_logo2 from './assets/yiwangtongban_logo2.jpeg'
 </script>
 
 <template>
    <a-row>
-    <a-col :span="8">  <NavView /></a-col>
-    <a-col :span="12"><RouterView/></a-col>
+    <a-col :span="8">
+
+      <a-row><a-avatar shape="square" :src="yiwangtongban_logo2" style="margin-top: 5px;margin-left: 10px;"></a-avatar><h1>长宁区政务服务中心</h1></a-row>
+      <NavView />
+
+    </a-col>
+    <a-col :span="12" style="margin-top: 10px;">
+
+      <RouterView/>
+    </a-col>
   </a-row>
 </template>
 

@@ -1,18 +1,58 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import type { SizeType } from 'ant-design-vue/es/config-provider';
+import {useDataStore} from '@/stores/counter'
+const data = useDataStore().data
 const size = ref<SizeType>('large')
-const shipinxinban = "https://zwdt.sh.gov.cn/govPortals/bsfw/item/51dd6e47-4c9a-42dd-96aa-c5701887ef5f"
+
 </script>
 
 <template>
    <a-divider />
-  <a :href='shipinxinban' target="_blank"><a-button type="primary" shape="round" :size="size">
-    <template #icon>
-      <DownloadOutlined />
-    </template>
-    食品经营许可证新办
-  </a-button></a>
+  <a-row><h3>{{data.qiyebiangeng[0].name}}</h3></a-row>
+  <a-row>
+    <a-col v-for='item in data.qiyebiangeng'>
+      <a :href='data.banli_url.id+item.id' target="_blank"><a-button type="primary" shape="round" :size="size">{{item.name}}</a-button></a>
+    </a-col>
+    <a-col><a :href='data.zhangchengfanben.id' target="_blank"><a-button type="primary" shape="round" :size="size">{{data.zhangchengfanben.name}}</a-button></a></a-col>
+  </a-row>
+
+  <a-divider />
+  <a-row ><h3>食品经营许可</h3></a-row>
+  <a-row >
+    <a-col v-for='item in data.shipin'>
+      <a :href='data.banli_url.id+item.id' target="_blank"><a-button type="primary" shape="round" :size="size">{{item.name}}</a-button></a>
+    </a-col>
+  </a-row>
+  <a-row style="margin-top: 10px;">
+    <a-col><a :href='data.yubaozhuangchaxun.id' target="_blank"><a-button type="primary" shape="round" :size="size">{{data.yubaozhuangchaxun.name}}</a-button></a></a-col>
+  </a-row>
+
+  <a-divider />
+  <a-row><h3>《酒类商品零售许可证》审批</h3></a-row>
+  <a-row>
+    <a-col v-for='item in data.jiulei'>
+      <a :href='data.banli_url.id+item.id' target="_blank"><a-button type="primary" shape="round" :size="size">{{item.name}}</a-button></a>
+    </a-col>
+  </a-row>
+
+  <a-divider />
+  <a-row><h3>《酒类商品批发许可证》审批</h3></a-row>
+  <a-row>
+    <a-col v-for='item in data.jiuleipifa'>
+      <a :href='data.banli_url.id+item.id' target="_blank"><a-button type="primary" shape="round" :size="size">{{item.name}}</a-button></a>
+    </a-col>
+  </a-row>
+
+
+  <a-divider />
+  <a-row><a href="https://zwdt.sh.gov.cn/govPortals/municipalDepartments/SHSPSH" target="_blank"><h3>第二类医疗器械经营备案</h3></a></a-row>
+  <a-row>
+    <a-col v-for='item in data.yiliao'>
+      <a :href='data.banli_url.id+item.id' target="_blank"><a-button type="primary" shape="round" :size="size">{{item.name}}</a-button></a>
+    </a-col>
+  </a-row>
+
 </template>
 
 <style scoped>

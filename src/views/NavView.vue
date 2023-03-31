@@ -9,7 +9,7 @@
   >
     <a-sub-menu key="sub1" @titleClick="titleClick">
       <template #icon>
-        <MailOutlined />
+        <usergroup-add-outlined />
       </template>
       <template #title>帮办服务</template>
       <a-menu-item-group key="g1">
@@ -20,9 +20,13 @@
         <RouterLink to='/'><a-menu-item key="1">直达链接</a-menu-item></RouterLink>
         <RouterLink to='/Content'><a-menu-item key="2">办理指引</a-menu-item></RouterLink>
       </a-menu-item-group>
-      <a-menu-item-group key="g2" title="Item 2">
-        <a-menu-item key="3">Option 3</a-menu-item>
-        <a-menu-item key="4">Option 4</a-menu-item>
+      <a-menu-item-group key="g2" title="税务局">
+        <!-- <a-menu-item key="3">Option 3</a-menu-item> -->
+        <RouterLink to='/Shuiwu'><a-menu-item key="4">直达链接</a-menu-item></RouterLink>
+      </a-menu-item-group>
+      <a-menu-item-group key="g2" title="卫生健康委员会">
+        <!-- <a-menu-item key="3">Option 3</a-menu-item> -->
+        <RouterLink to='/Weijianwei'><a-menu-item key="4">直达链接</a-menu-item></RouterLink>
       </a-menu-item-group>
     </a-sub-menu>
     <a-sub-menu key="sub2" @titleClick="titleClick">
@@ -51,12 +55,12 @@
 </template>
 <script lang="ts">
 import { defineComponent, ref, watch } from 'vue';
-import { MailOutlined, QqOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
+import { UsergroupAddOutlined, QqOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
 import type { MenuProps } from 'ant-design-vue';
 import BangbanView from '@/components/BangbanView.vue';
 export default defineComponent({
   components: {
-    MailOutlined,
+    UsergroupAddOutlined,
     QqOutlined,
     AppstoreOutlined,
     SettingOutlined,

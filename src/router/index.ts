@@ -13,6 +13,16 @@ const router = createRouter({
       name: 'Content',
       component: () => import('@/components/ContentView.vue')
     },
+    {
+      path: '/Shuiwu',
+      name: 'Shuiwu',
+      component: () => import('@/components/ShuiwuView.vue')
+    },
+    {
+      path: '/Weijianwei',
+      name: 'Weijianwei',
+      component: () => import('@/components/WeijianweiView.vue')
+    },
 
   ]
 })
