@@ -9,6 +9,18 @@ const router = createRouter({
       component: () => import('@/components/BangbanView.vue')
     },
     {
+      path: '/Zidongshengcheng',
+      name: 'Zidongshengcheng',
+      component: () => import('@/components/ChildView/ZidongshengchengView.vue'),
+      children:[
+        {
+          path:"zcxza",
+          name:"Zhangchengxiuzhengan",
+          component:() => import('@/components/ChildView/ZcxzaView.vue'),
+        },
+      ]
+    },
+    {
       path: '/Content',
       name: 'Content',
       component: () => import('@/components/ContentView.vue'),

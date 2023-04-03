@@ -37,8 +37,8 @@
       <template #icon>
         <AppstoreOutlined />
       </template>
-      <template #title>Navigation Two</template>
-      <a-menu-item key="5">Option 5</a-menu-item>
+      <template #title>章程范本</template>
+      <RouterLink to='/Zidongshengcheng'><a-menu-item key="5">自动生成</a-menu-item></RouterLink>
       <a-menu-item key="6">Option 6</a-menu-item>
       <a-sub-menu key="sub3" title="Submenu">
         <a-menu-item key="7">Option 7</a-menu-item>
