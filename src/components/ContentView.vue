@@ -1,42 +1,31 @@
-<script setup lang="ts">
-import { ref } from 'vue';
-import type { SizeType } from 'ant-design-vue/es/config-provider';
-const size =  ref<SizeType>('large')
-</script>
-
 <template>
-  <h1>帮办指引</h1>
-  <RouterLink to="/Content/Dianzizhizhao"><a-button type="normal" shape="round" :size="size">
-    电子营业执照
-  </a-button></RouterLink>
+  <a-radio-group v-model:value="value1" size="large">
+    <a-radio-button  v-for="item,key in bangban_content" :value="key">{{ key }}</a-radio-button>
+  </a-radio-group>
+  <h1>{{ value1}}</h1>
 
-  <RouterLink to="/Content/Shipinxinban"><a-button type="normal" shape="round" :size="size">
-    食品经营许可证新办
-  </a-button></RouterLink>
-
-  <RouterView />
+  <a-timeline>
+      <a-timeline-item v-for="(item,index) in bangban_content[value1]['content']">{{index}}、{{ item }}</a-timeline-item>
+    </a-timeline>
+    <a-image v-for="(img_src,index) in img_list" :width="200" :src="img_src"></a-image>
 </template>
-
-<style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  top: -10px;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
+<script setup lang="ts">
+import { ref ,watch} from 'vue';
+import {bangban_content} from '@/utils/bangban_content'
+const value1 = ref<string>('电子营业执照申请');
+const img_list = ref([])
+const getImageUrl = (img_name:string) => {
+        	// 里面可以根据需求写逻辑
+            return new URL(`../assets/${img_name}.jpg`, import.meta.url).href;
+        };
+watch(value1,(newValue,oldValue)=>{
+  img_list.value = []
+  for(let imgsrc of  bangban_content[value1.value]['imgsrc']){
+   img_list.value.push(getImageUrl(imgsrc))
   }
-}
-</style>
+})
+for(let imgsrc of  bangban_content[value1.value]['imgsrc']){
+   img_list.value.push(getImageUrl(imgsrc))
+  }
+
+</script>
